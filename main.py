@@ -1502,24 +1502,6 @@ class HiRiseBot(BaseBot):
             await self.highrise.chat(f"❌ مثال: !outfit 1")
 
     # ══════════════════════════════════════════
-    #  ── کیک ──
-    # ══════════════════════════════════════════
-    async def _cmd_kick(self, user: User, target_raw: str):
-        target_name = target_raw.replace("@", "")
-        if target_name.lower() == OWNER_USERNAME.lower() or target_name.lower() in [a.lower() for a in ADMINS]:
-            await self.highrise.chat("❌ نمی‌تونی ادمین رو کیک کنی!")
-            return
-        target_id = await self._find_user_id(target_name)
-        if target_id:
-            try:
-                await self.highrise.moderate_room(target_id, "kick")
-                await self.highrise.chat(f"👢 @{target_name} کیک شد!")
-            except Exception as e:
-                await self.highrise.chat(f"❌ خطا در کیک: {e}")
-        else:
-            await self.highrise.chat(f"❌ @{target_name} توی روم نیست")
-
-    # ══════════════════════════════════════════
     #  ── بازی تاس ──
     # ══════════════════════════════════════════
     async def _cmd_dice(self, user: User):
