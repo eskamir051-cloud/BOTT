@@ -747,7 +747,6 @@ class HiRiseBot(BaseBot):
                 "  !roll → عدد 1-6\n\n"
                 "🔎 سایر:\n"
                 "  !follow @user / !unfollow\n"
-                "  !kick @user\n"
                 "  !status → وضعیت\n"
                 "  !danslist → لیست دنس"
             ).replace("{n}", str(len(self.emotes_list)))
