@@ -683,10 +683,6 @@ class HiRiseBot(BaseBot):
                 await self._cmd_status()
                 return
 
-            # ═══ کیک (اختیاری) ═══
-            if msg.lower().startswith("!kick ") and is_admin(user):
-                await self._cmd_kick(user, msg[6:].strip())
-                return
 
         except Exception as e:
             print(f"⚠️ on_chat error: {e}")
